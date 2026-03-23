@@ -23,8 +23,32 @@ public class Triangle extends AbstractGrapicObject {
     @Override
     public void draw(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
+
+        g2.setRenderingHint(
+                RenderingHints.KEY_ANTIALIASING,
+                RenderingHints.VALUE_ANTIALIAS_ON
+        );
+
+
         g2.setColor(color);
 
+        int[] xPoints = {
+                position.x,             //levy bod
+                position.x + a / 2,     //horni bod
+                position.x + a          //pravy bod
+        };
+
+        int[] yPoints = {
+                position.y + a,         //levy bod
+                position.y,             //horni bod
+                position.y + a          //pravy bod
+        };
+
+        g2.drawPolygon(xPoints, yPoints, 3);
+    }
+
+    @Override
+    public boolean contains(Point p) {
         int[] xPoints = {
                 position.x,
                 position.x + a / 2,
@@ -37,11 +61,7 @@ public class Triangle extends AbstractGrapicObject {
                 position.y + a
         };
 
-        g2.drawPolygon(xPoints, yPoints, 3);
-    }
-
-    @Override
-    public boolean contains(Point p) {
-        return false;
+        Polygon triangle = new Polygon(xPoints, yPoints, 3);
+        return triangle.contains(p);
     }
 }

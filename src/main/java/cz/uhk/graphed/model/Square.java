@@ -29,6 +29,9 @@ public class Square extends AbstractGrapicObject {
 
     @Override
     public boolean contains(Point p) {
-        return false;
+        return p.x >= position.x &&         //vlevo
+                p.x <= position.x + a &&    //vpravo
+                p.y >= position.y &&        //nahore
+                p.y <= position.y + a;      //dole
     }
 }
