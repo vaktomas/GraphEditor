@@ -6,7 +6,7 @@ import java.util.List;
 
 //seskupeni grafickych objektu
 public class GraphicGroup extends AbstractGraphicObject {
-    List<AbstractGraphicObject> items = new ArrayList<>();
+    private List<AbstractGraphicObject> items = new ArrayList<>();
 
     @Override
     public void draw(Graphics g) {
@@ -40,6 +40,8 @@ public class GraphicGroup extends AbstractGraphicObject {
     }
 
     public void add(AbstractGraphicObject obj) {
-        items.add(obj);
+        if (obj != null) {
+            items.add(obj);
+        }
     }
 }
