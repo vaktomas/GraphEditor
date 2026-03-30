@@ -2,7 +2,7 @@ package cz.uhk.graphed.model;
 
 import java.awt.*;
 
-public class Square extends AbstractGrapicObject {
+public class Square extends AbstractGraphicObject {
     protected int a;
 
     public Square() {}

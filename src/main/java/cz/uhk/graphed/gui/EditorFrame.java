@@ -1,6 +1,7 @@
 package cz.uhk.graphed.gui;
 
 import cz.uhk.graphed.model.Circle;
+import cz.uhk.graphed.model.GraphicGroup;
 import cz.uhk.graphed.model.Square;
 import cz.uhk.graphed.model.Triangle;
 
@@ -35,5 +36,18 @@ public class EditorFrame extends JFrame {
         canvas.add(new Circle(new Point(500,100), Color.BLACK, 50));
         canvas.add(new Circle(new Point(500,200), Color.BLACK, 50));
         canvas.add(new Circle(new Point(600,100), Color.BLACK, 50));
+
+
+        GraphicGroup group = new GraphicGroup();
+        Square s = new Square(new Point(200, 200), Color.RED, 100);
+        Circle c = new Circle(new Point(200, 200), Color.RED, 100);
+
+        canvas.add(s);
+        canvas.add(c);
+
+        group.add(s);
+        group.add(c);
+
+        canvas.add(group);
     }
 }

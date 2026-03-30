@@ -2,16 +2,16 @@ package cz.uhk.graphed.model;
 
 import java.awt.*;
 
-public abstract class AbstractGrapicObject {
+public abstract class AbstractGraphicObject {
     protected Point position;
     protected Color color;
 
-    public AbstractGrapicObject(Point position, Color color) {
+    public AbstractGraphicObject(Point position, Color color) {
         this.position = position;
         this.color = color;
     }
 
-    public AbstractGrapicObject() {
+    public AbstractGraphicObject() {
     }
 
     public Point getPosition() {
@@ -42,5 +42,9 @@ public abstract class AbstractGrapicObject {
 
     public boolean contains(int x, int y) {
         return contains(new Point(x,y));
+    }
+
+    public void move(int dx, int dy) {
+        position.translate(dx, dy); //objekt bez position = spadne to
     }
 }

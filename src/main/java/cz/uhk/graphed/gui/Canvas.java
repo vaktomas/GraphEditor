@@ -1,6 +1,6 @@
 package cz.uhk.graphed.gui;
 
-import cz.uhk.graphed.model.AbstractGrapicObject;
+import cz.uhk.graphed.model.AbstractGraphicObject;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Canvas extends JPanel {
-    private List<AbstractGrapicObject> grapicObjects = new ArrayList<>();
-    private AbstractGrapicObject selectedObject = null; // aktualne vybrany objekt
+    private List<AbstractGraphicObject> grapicObjects = new ArrayList<>();
+    private AbstractGraphicObject selectedObject = null; // aktualne vybrany objekt
     private Point dragOffset = null; // posun mezi kliknutim a pozici objektu
 
     public Canvas() {
@@ -24,9 +24,10 @@ public class Canvas extends JPanel {
             public void mouseDragged(MouseEvent e) {
                 if (selectedObject != null && dragOffset != null) {
                     // posun objektu podle offsetu
-                    int newX = e.getX() - dragOffset.x;
-                    int newY = e.getY() - dragOffset.y;
-                    selectedObject.setPosition(new Point(newX, newY));
+                    int dx = e.getX() - dragOffset.x - selectedObject.getPosition().x;
+                    int dy = e.getY() - dragOffset.y - selectedObject.getPosition().y;
+
+                    selectedObject.move(dx, dy);
                     repaint();
                 }
             }
@@ -55,9 +56,9 @@ public class Canvas extends JPanel {
     }
 
     // najde prvni objekt obsahujici bod
-    private AbstractGrapicObject findObjectContaining(Point point) {
+    private AbstractGraphicObject findObjectContaining(Point point) {
         for (int i = grapicObjects.size() - 1; i >= 0; i--) {
-            AbstractGrapicObject object = grapicObjects.get(i);
+            AbstractGraphicObject object = grapicObjects.get(i);
             if (object.contains(point)) {
                 return object;
             }
@@ -66,7 +67,7 @@ public class Canvas extends JPanel {
     }
 
     // pridani objektu
-    public void add(AbstractGrapicObject object) {
+    public void add(AbstractGraphicObject object) {
         grapicObjects.add(object);
     }
 

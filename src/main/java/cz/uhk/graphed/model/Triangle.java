@@ -2,7 +2,7 @@ package cz.uhk.graphed.model;
 
 import java.awt.*;
 
-public class Triangle extends AbstractGrapicObject {
+public class Triangle extends AbstractGraphicObject {
     protected int a;
 
     public Triangle() {}

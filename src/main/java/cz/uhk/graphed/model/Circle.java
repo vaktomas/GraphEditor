@@ -2,7 +2,7 @@ package cz.uhk.graphed.model;
 
 import java.awt.*;
 
-public class Circle extends AbstractGrapicObject {
+public class Circle extends AbstractGraphicObject {
     protected int r;
 
     public Circle() {}
