@@ -4,6 +4,7 @@ import cz.uhk.graphed.model.Circle;
 import cz.uhk.graphed.model.GraphicGroup;
 import cz.uhk.graphed.model.Square;
 import cz.uhk.graphed.model.Triangle;
+import cz.uhk.graphed.model.Rectangle;
 import cz.uhk.graphed.model.AbstractGraphicObject;
 import java.awt.Color;
 import java.awt.Point;
@@ -36,7 +37,9 @@ public class EditorFrame extends JFrame {
         JButton addSquareButton = new JButton("Add Square");
         JButton addCircleButton = new JButton("Add Circle");
         JButton addTriangleButton = new JButton("Add Triangle");
+        JButton addRectButton = new JButton("Add Rectangle");
 
+        toolBar.add(addRectButton);
         toolBar.add(addSquareButton);
         toolBar.add(addCircleButton);
         toolBar.add(addTriangleButton);
@@ -46,6 +49,7 @@ public class EditorFrame extends JFrame {
         addSquareButton.addActionListener(e -> addRandomObject("square"));
         addCircleButton.addActionListener(e -> addRandomObject("circle"));
         addTriangleButton.addActionListener(e -> addRandomObject("triangle"));
+        addRectButton.addActionListener(e -> addRandomObject("rectangle"));
     }
 
     private void initSampleData() {
@@ -93,6 +97,10 @@ public class EditorFrame extends JFrame {
                 break;
             case "triangle":
                 object = new Triangle(new Point(x, y), Color.BLACK, size);
+                break;
+            case "rectangle":
+                int height = (int) (Math.random() * 100) + 30;
+                object = new Rectangle(new Point(x, y), Color.BLACK, size, height);
                 break;
         }
 

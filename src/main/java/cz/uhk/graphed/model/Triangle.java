@@ -24,6 +24,7 @@ public class Triangle extends AbstractGraphicObject {
     public void draw(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
 
+        //vyhlazovani
         g2.setRenderingHint(
                 RenderingHints.KEY_ANTIALIASING,
                 RenderingHints.VALUE_ANTIALIAS_ON
