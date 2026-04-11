@@ -53,22 +53,26 @@ public class EditorFrame extends JFrame {
     }
 
     private void initSampleData() {
-        canvas.add(new Square(new Point(100,100), Color.BLACK, 50));
-        canvas.add(new Square(new Point(100,200), Color.BLUE, 50));
-        canvas.add(new Square(new Point(200,100), Color.GREEN, 50));
+        canvas.add(new Square(new Point(50, 0), Color.BLACK, 50));
+        canvas.add(new Square(new Point(50, 100), Color.BLUE, 50));
+        canvas.add(new Square(new Point(50, 200), Color.GREEN, 50));
 
-        canvas.add(new Triangle(new Point(300,100), Color.BLACK, 50));
-        canvas.add(new Triangle(new Point(300,200), Color.BLACK, 50));
-        canvas.add(new Triangle(new Point(400,100), Color.BLACK, 50));
+        canvas.add(new Triangle(new Point(200, 0), Color.BLACK, 50));
+        canvas.add(new Triangle(new Point(200, 100), Color.BLACK, 50));
+        canvas.add(new Triangle(new Point(200, 200), Color.BLACK, 50));
 
-        canvas.add(new Circle(new Point(500,100), Color.BLACK, 50));
-        canvas.add(new Circle(new Point(500,200), Color.BLACK, 50));
-        canvas.add(new Circle(new Point(600,100), Color.BLACK, 50));
+        canvas.add(new Circle(new Point(350, 0), Color.BLACK, 50));
+        canvas.add(new Circle(new Point(350, 100), Color.BLACK, 50));
+        canvas.add(new Circle(new Point(350, 200), Color.BLACK, 50));
+
+        canvas.add(new Rectangle(new Point(550, 0), Color.BLACK, 100, 50));
+        canvas.add(new Rectangle(new Point(550, 100), Color.MAGENTA, 100, 50));
+        canvas.add(new Rectangle(new Point(550, 200), Color.ORANGE, 100, 50));
 
 
         GraphicGroup group = new GraphicGroup();
-        Square s = new Square(new Point(200, 200), Color.RED, 100);
-        Circle c = new Circle(new Point(200, 200), Color.RED, 100);
+        Square s = new Square(new Point(150, 300), Color.RED, 100);
+        Circle c = new Circle(new Point(150, 300), Color.RED, 100);
 
         canvas.add(s);
         canvas.add(c);
