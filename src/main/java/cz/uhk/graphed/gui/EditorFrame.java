@@ -85,9 +85,19 @@ public class EditorFrame extends JFrame {
     //-----------RANDOM OBJECT---------------
     private void addRandomObject(String type) {
         // generovani random pozice
-        int x = (int) (Math.random() * (canvas.getWidth() - 100)); // Šířka panelu - 100 pro omezení velikosti
-        int y = (int) (Math.random() * (canvas.getHeight() - 100)); // Výška panelu - 100 pro omezení velikosti
         int size = (int) (Math.random() * 100) + 30; // Velikost mezi 30 a 130 px
+
+        int limit;
+
+        if (type.equals("circle")) {
+            limit = size * 2;
+        } else {
+            limit = size;
+        }
+
+        int x = (int) (Math.random() * (canvas.getWidth() - limit)); // Šířka panelu - 100 pro omezení velikosti
+        int y = (int) (Math.random() * (canvas.getHeight() - limit)); // Výška panelu - 100 pro omezení velikosti
+
 
         //vytvoreni objektu podle typu
         AbstractGraphicObject object = null;

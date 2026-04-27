@@ -28,9 +28,9 @@ public class Rectangle extends AbstractGraphicObject {
 
     @Override
     public boolean contains(Point p) {
-        return p.x >= position.x &&
-                p.x <= position.x + w &&
-                p.y >= position.y &&
-                p.y <= position.y + h;
+        return p.x >= position.x &&         //vpravo
+                p.x <= position.x + w &&    //vlevo
+                p.y >= position.y &&        //pod horním okrajem
+                p.y <= position.y + h;      //nad dolním okrajem
     }
 }

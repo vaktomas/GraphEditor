@@ -51,15 +51,15 @@ public class Triangle extends AbstractGraphicObject {
     @Override
     public boolean contains(Point p) {
         int[] xPoints = {
-                position.x,
-                position.x + a / 2,
-                position.x + a
+                position.x,            //levy dolni vrchol
+                position.x + a / 2,    //horni vrchol
+                position.x + a         //pravy dolno vrchol
         };
 
         int[] yPoints = {
-                position.y + a,
-                position.y,
-                position.y + a
+                position.y + a,        //levy dolni vrchol
+                position.y,            //horni vrchol
+                position.y + a         //pravy dolni vrchol
         };
 
         Polygon triangle = new Polygon(xPoints, yPoints, 3);
